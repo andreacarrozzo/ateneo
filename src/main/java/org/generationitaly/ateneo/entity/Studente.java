@@ -1,6 +1,7 @@
 package org.generationitaly.ateneo.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -47,7 +48,7 @@ public class Studente {
 	private String sesso;
 
 	@Column(name = "data_nascita", nullable = false)
-	private String dataNascita;
+	private Date dataNascita;
 
 	@OneToMany(mappedBy = "studente")
 	private List<Esame> esami = new ArrayList<Esame>();
@@ -92,11 +93,11 @@ public class Studente {
 		this.sesso = sesso;
 	}
 
-	public String getDataNascita() {
+	public Date getDataNascita() {
 		return dataNascita;
 	}
 
-	public void setDataNascita(String dataNascita) {
+	public void setDataNascita(Date dataNascita) {
 		this.dataNascita = dataNascita;
 	}
 
