@@ -19,8 +19,8 @@ public class StudentiServlet extends HttpServlet {
 	private static StudenteRepository studenteRepository = new StudenteRepositoryImpl();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//List<Studente> studenti = studenteRepository.findAll();
-		Studente studente = new Studente();
+		List<Studente> studenti = studenteRepository.findAll();
+		/*Studente studente = new Studente();
 		studente.setMatricola("123");
 		studente.setNome("Mario");
 		studente.setCognome("rossi");
@@ -31,7 +31,7 @@ public class StudentiServlet extends HttpServlet {
 		List<Studente> studenti = new ArrayList<Studente>();
 		studenti.add(studente);
 		studenti.add(studente2);
-		
+		*/
 		request.setAttribute("studenti", studenti);
 		request.getRequestDispatcher("studenti.jsp").forward(request, response);
 	}
