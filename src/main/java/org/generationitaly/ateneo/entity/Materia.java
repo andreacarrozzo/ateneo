@@ -1,10 +1,14 @@
 package org.generationitaly.ateneo.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /*
@@ -27,12 +31,18 @@ public class Materia {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
 	private int id;
+	
 	@Column(name = "codice", length = 5, unique = true, nullable = false)
 	private String codice;
+
 	@Column(name = "nome", length = 45, nullable = false)
 	private String nome;
+
 	@Column(name = "cfu", nullable = false)
 	private int cfu;
+
+	@OneToMany(mappedBy = "materia")
+	private List<Esame> esami = new ArrayList<Esame>();
 
 	public int getId() {
 		return id;
@@ -64,6 +74,14 @@ public class Materia {
 
 	public void setCfu(int cfu) {
 		this.cfu = cfu;
+	}
+
+	public List<Esame> getEsami() {
+		return esami;
+	}
+
+	public void setEsami(List<Esame> esami) {
+		this.esami = esami;
 	}
 
 	@Override
