@@ -11,6 +11,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 /*
 id INT NOT NULL AUTO_INCREMENT,
@@ -44,6 +46,7 @@ public class Studente {
 	@Column(name = "cognome", nullable = false, length = 45)
 	private String cognome;
 	
+	@Temporal(TemporalType.DATE)
 	@Column(name = "sesso", nullable = false, length = 1)
 	private String sesso;
 
@@ -114,6 +117,7 @@ public class Studente {
 		return "Studente [id=" + id + ", matricola=" + matricola + ", nome=" + nome + ", cognome=" + cognome
 				+ ", sesso=" + sesso + ", dataNascita=" + dataNascita + "]";
 	}
+
 	
 	
 }
