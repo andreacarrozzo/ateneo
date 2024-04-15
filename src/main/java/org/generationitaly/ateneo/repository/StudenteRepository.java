@@ -1,5 +1,7 @@
 package org.generationitaly.ateneo.repository;
 
-public interface StudenteRepository {
+import org.generationitaly.ateneo.entity.Studente;
+
+public interface StudenteRepository extends JpaRepository<Studente, Integer> {
 
 }
