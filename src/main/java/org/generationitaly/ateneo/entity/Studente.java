@@ -1,10 +1,14 @@
 package org.generationitaly.ateneo.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /*
@@ -45,6 +49,8 @@ public class Studente {
 	@Column(name = "data_nascita", nullable = false)
 	private String dataNascita;
 
+	@OneToMany(mappedBy = "studente")
+	private List<Esame> esami = new ArrayList<Esame>();
 
 	public int getId() {
 		return id;
@@ -92,6 +98,14 @@ public class Studente {
 
 	public void setDataNascita(String dataNascita) {
 		this.dataNascita = dataNascita;
+	}
+
+	public List<Esame> getEsami() {
+		return esami;
+	}
+
+	public void setEsami(List<Esame> esami) {
+		this.esami = esami;
 	}
 
 	@Override
