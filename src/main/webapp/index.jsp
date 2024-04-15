@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="studente.jsp">Link</a>
-	<a href="Test.jsp">Link Test</a>
+	
+	
 </body>
 </html>

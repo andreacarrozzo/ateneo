@@ -6,6 +6,7 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -56,7 +57,7 @@ public class Studente {
 	@Column(name = "data_nascita", nullable = false)
 	private Date dataNascita;
 
-	@OneToMany(mappedBy = "studente")
+	@OneToMany(mappedBy = "studente", fetch = FetchType.EAGER)
 	private List<Esame> esami = new ArrayList<Esame>();
 
 

@@ -12,27 +12,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%  Studente studente = new Studente();
-		studente.setMatricola("12345");
-		studente.setCodiceFiscale("1234567890abcdef");
-		studente.setNome("mario");
-		studente.setCognome("rossi");
-		studente.setSesso("M");
-		studente.setDataNascita(new Date());
+	<%  Studente studente = (Studente) request.getAttribute("studente");
 		
-		Materia materia = new Materia();
-		materia.setCodice("98765");
-		materia.setNome("Italiano");
-		materia.setCfu(9);
-		
-		Esame esameTest = new Esame();
-		esameTest.setMateria(materia);
-		esameTest.setStudente(studente);
-		esameTest.setDataEsame(new Date());
-		esameTest.setVoto(30);
-		esameTest.setLode(false);
-		
-		studente.getEsami().add(esameTest);
 		%>
 	
 	<div>
