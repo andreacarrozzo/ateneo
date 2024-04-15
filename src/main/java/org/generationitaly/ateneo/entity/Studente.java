@@ -40,6 +40,9 @@ public class Studente {
 	@Column(name = "matricola", nullable = false, length = 6)
 	private String matricola;
 	
+	@Column(name = "codice_fiscale", nullable = false, length = 16)
+	private String codiceFiscale;
+	
 	@Column(name = "nome", nullable = false, length = 45)
 	private String nome;
 	
@@ -56,66 +59,91 @@ public class Studente {
 	@OneToMany(mappedBy = "studente")
 	private List<Esame> esami = new ArrayList<Esame>();
 
+
 	public int getId() {
 		return id;
 	}
+
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
+
 	public String getMatricola() {
 		return matricola;
 	}
+
 
 	public void setMatricola(String matricola) {
 		this.matricola = matricola;
 	}
 
+
+	public String getCodiceFiscale() {
+		return codiceFiscale;
+	}
+
+
+	public void setCodiceFiscale(String codiceFiscale) {
+		this.codiceFiscale = codiceFiscale;
+	}
+
+
 	public String getNome() {
 		return nome;
 	}
+
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
+
 	public String getCognome() {
 		return cognome;
 	}
+
 
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
 
+
 	public String getSesso() {
 		return sesso;
 	}
+
 
 	public void setSesso(String sesso) {
 		this.sesso = sesso;
 	}
 
+
 	public Date getDataNascita() {
 		return dataNascita;
 	}
+
 
 	public void setDataNascita(Date dataNascita) {
 		this.dataNascita = dataNascita;
 	}
 
+
 	public List<Esame> getEsami() {
 		return esami;
 	}
+
 
 	public void setEsami(List<Esame> esami) {
 		this.esami = esami;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Studente [id=" + id + ", matricola=" + matricola + ", nome=" + nome + ", cognome=" + cognome
-				+ ", sesso=" + sesso + ", dataNascita=" + dataNascita + "]";
+		return "Studente [id=" + id + ", matricola=" + matricola + ", codiceFiscale=" + codiceFiscale + ", nome=" + nome
+				+ ", cognome=" + cognome + ", sesso=" + sesso + ", dataNascita=" + dataNascita + "]";
 	}
 
 	
